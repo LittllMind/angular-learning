@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppareilComponent implements OnInit {
 
+  appareilName: string = "Machine a laver";
+  appareilStatus : string = 'eteint';
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  getStatus() {
+    return this.appareilStatus;
   }
 
 }
