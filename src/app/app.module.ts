@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { FirstComponentComponent } from './first-component/first-component.component';
 import { AppareilComponent } from './appareil/appareil.component';
 import { FormsModule } from '@angular/forms';
+// import '@angular/compiler';
 
 @NgModule({
   declarations: [
