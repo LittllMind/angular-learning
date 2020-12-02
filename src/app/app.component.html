@@ -3,6 +3,7 @@
     <div class="col-xs-12">
       <h2>Mes appareils</h2>
       <p>Mis a jour : {{ lastUpdate | date: 'y MMMM EEEE d' }}</p>
+      <p>Mis a jour : {{ lastUpdate | date: 'y MMMM EEEE d' | uppercase }}</p>
       <p>Mis a jour : {{ lastUpdate | date: 'short' }}</p>
       <ul class="list-group">
         <app-appareil *ngFor="let appareil of appareils"
