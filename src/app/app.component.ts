@@ -6,16 +6,27 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  isAuth = true;
+  isAuth = false;
 
-  appareilOne = 'Machine a laver';
-  appareilTwo = 'Frigo';
-  appareilThree = 'Ordinateur';
+  appareils = [
+    {
+      name: 'Machine a laver',
+      status: 'off'
+    },
+    {
+      name: 'Frigo',
+      status: 'off'
+    },
+    {
+      name: 'Ordinateur',
+      status: 'off'
+    }
+  ];
 
   constructor() {
     setTimeout(
       () => {
-      this.isAuth = false
+      this.isAuth = true
     }, 4000
     );
   }
