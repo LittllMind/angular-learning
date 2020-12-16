@@ -7,6 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   isAuth = false;
+
+  appareil: any[];
+
   lastUpdate = new Promise((resolve, reject) => {
     const date = new Date();
     setTimeout(
@@ -16,22 +19,7 @@ export class AppComponent {
     );
   });
 
-  appareils = [
-    {
-      name: 'Machine a laver',
-      status: 'off'
-    },
-    {
-      name: 'Frigo',
-      status: 'off'
-    },
-    {
-      name: 'Ordinateur',
-      status: 'off'
-    }
-  ];
-
-  constructor() {
+  constructor(private appareilService: AppareilService) {
     setTimeout(
       () => {
       this.isAuth = true
