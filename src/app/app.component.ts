@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { AppareilService } from './services/appareil.service';
+
 
 @Component({
   selector: 'app-root',
@@ -6,9 +8,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
+  ngOnInit() {
+      this.appareils = this.appareilService.appareils;
+  }
+
   isAuth = false;
 
-  appareil: any[];
+  appareils: any[];
 
   lastUpdate = new Promise((resolve, reject) => {
     const date = new Date();
