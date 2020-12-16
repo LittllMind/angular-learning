@@ -2,12 +2,7 @@
                 'list-group-item-success': appareilStatus === 'allumé',
                 'list-group-item-danger': appareilStatus === 'éteint'}">
   <div *ngIf="appareilStatus === 'off'"
-<<<<<<< HEAD
         style="width:20px; height: 20px; background-color: red;">
-=======
-        style="width:20px; height: 20px; background-color: red;"
-  >
->>>>>>> IX-services
   </div>
   <h4 [ngStyle]="{color : getColor()}">
     Appareil : {{ appareilName }} -- statut : {{ getStatus() }}
