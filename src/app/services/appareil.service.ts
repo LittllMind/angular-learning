@@ -3,11 +3,11 @@ export class AppareilService {
   appareils = [
       {
         name: 'Machine a laver',
-        status: 'off'
+        status: 'on'
       },
       {
         name: 'Frigo',
-        status: 'off'
+        status: 'on'
       },
       {
         name: 'Ordinateur',
@@ -17,22 +17,22 @@ export class AppareilService {
 
 
     switchOnOne(i: number) {
-      this.appareils[i].status = 'allumé';
+      this.appareils[i].status = 'on';
     }
 
     switchOffOne(i: number) {
-      this.appareils[i].status = 'éteint';
+      this.appareils[i].status = 'off';
     }
 
     switchOnAll() {
       for(let appareil of this.appareils) {
-          appareil.status = 'allumé';
+          appareil.status = 'on';
       }
     }
 
     switchOffAll() {
       for(let appareil of this.appareils) {
-        appareil.status = 'éteint'
+        appareil.status = 'off'
       }
     }
 }
