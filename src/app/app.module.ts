@@ -10,6 +10,7 @@ import { AppareilViewComponent } from './appareil-view/appareil-view.component';
 import { Routes, RouterModule } from '@angular/router';
 import { SingleAppareilComponent } from './single-appareil/single-appareil.component';
 
+import { AuthGuard } from './services/auth-guard.service';
 import { AppareilService } from './services/appareil.service';
 import { AuthService } from './services/auth.service';
 import { NotFoundComponent } from './not-found/not-found.component';
@@ -39,7 +40,8 @@ const appRoutes: Routes = [
   ],
   providers: [
     AppareilService,
-    AuthService
+    AuthService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })

@@ -9,7 +9,7 @@ import { AppareilService } from './services/appareil.service';
 })
 export class AppComponent implements OnInit {
 
-  // isAuth = false;
+  isAuth = false;
 
   appareils: any[];
 
