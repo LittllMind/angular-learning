@@ -12,13 +12,16 @@ import { SingleAppareilComponent } from './single-appareil/single-appareil.compo
 
 import { AppareilService } from './services/appareil.service';
 import { AuthService } from './services/auth.service';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 
 const appRoutes: Routes = [
   { path: 'appareils', component: AppareilViewComponent },
   { path: 'appareils/:id', component: SingleAppareilComponent },
   { path: 'auth', component: AuthComponent},
-  { path: '', component: AppareilViewComponent}
+  { path: '', component: AppareilViewComponent},
+  { path: 'not-found', component: NotFoundComponent},
+  { path: '**', redirectTo: 'not-found'}
 ];
 
 @NgModule({
@@ -26,7 +29,8 @@ const appRoutes: Routes = [
     AppComponent,
     AppareilComponent,
     AuthComponent,
-    AppareilViewComponent
+    AppareilViewComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

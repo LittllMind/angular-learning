@@ -17,10 +17,10 @@ export class AppComponent implements OnInit {
   }
 
   constructor(private appareilService: AppareilService) {
-    // setTimeout(
-    //   () => {
-    //   this.isAuth = true
-    // }, 4000
-    // );
+    setTimeout(
+      () => {
+      this.isAuth = true
+    }, 4000
+    );
   }
 }
