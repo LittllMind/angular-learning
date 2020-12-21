@@ -9,6 +9,8 @@ import { NgForm } from '@angular/forms';
 })
 export class EditAppareilComponent implements OnInit {
 
+  defaultOnOff = 'Off';
+
   constructor() { }
 
   ngOnInit(): void {
