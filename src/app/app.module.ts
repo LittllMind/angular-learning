@@ -8,6 +8,7 @@ import { AppareilComponent } from './appareil/appareil.component';
 import { AppareilViewComponent } from './appareil-view/appareil-view.component';
 import { AuthComponent } from './auth/auth.component';
 import { SingleAppareilComponent } from './single-appareil/single-appareil.component';
+import { EditAppareilComponent } from './edit-appareil/edit.appareil.component';
 
 import { AppareilService } from './services/appareil.service';
 import { AuthService } from './services/auth.service';
@@ -18,6 +19,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 const appRoutes: Routes = [
   { path: 'appareils', canActivate: [AuthGuard], component: AppareilViewComponent },
   { path: 'appareils/:id', canActivate: [AuthGuard], component: SingleAppareilComponent },
+  { path: 'edit', canActivate: [AuthGuard], component: EditAppareilComponent },
   { path: 'auth', component: AuthComponent},
   { path: '', component: AppareilViewComponent},
   { path: 'not-found', component: NotFoundComponent},
@@ -28,8 +30,9 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     AppareilComponent,
-    AuthComponent,
     AppareilViewComponent,
+    EditAppareilComponent,
+    AuthComponent,
     NotFoundComponent
   ],
   imports: [
