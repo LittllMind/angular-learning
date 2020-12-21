@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/observable/interval';
-import { AppareilService } from './services/appareil.service';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 
+import { Observable } from 'rxjs/Observable';
+import { Subscription } from 'rxjs/Subscription';
+import 'rxjs/add/observable/interval';
+
+import { AppareilService } from './services/appareil.service';
 
 @Component({
   selector: 'app-root',
@@ -12,6 +14,7 @@ import { AppareilService } from './services/appareil.service';
 export class AppComponent implements OnInit {
 
   secondes : number;
+  counterSubscription: Subscription;
 
   isAuth = false;
 
@@ -30,6 +33,10 @@ export class AppComponent implements OnInit {
         console.log('Observable complete!');
       }
     );
+  }
+
+  ngOnDestroy() {
+    this.counterSubscription.unsuscribe();
   }
 
   constructor(private appareilService: AppareilService) {
