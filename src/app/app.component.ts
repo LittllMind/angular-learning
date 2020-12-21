@@ -36,7 +36,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnDestroy() {
-    this.counterSubscription.unsuscribe();
+    this.counterSubscription.unsubscribe();
   }
 
   constructor(private appareilService: AppareilService) {
