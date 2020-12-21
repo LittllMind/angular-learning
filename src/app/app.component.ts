@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/observable/interval';
 import { AppareilService } from './services/appareil.service';
 
 
@@ -9,11 +11,25 @@ import { AppareilService } from './services/appareil.service';
 })
 export class AppComponent implements OnInit {
 
+  secondes : number;
+
   isAuth = false;
 
   appareils: any[];
 
   ngOnInit() {
+    const counter = Observable.interval(1000);
+    counter.subscribe(
+      (value) => {
+        this.secondes = value;
+      },
+      (error) => {
+        console.log('Uh-oh, an error occured! : ' + error);
+      },
+      () => {
+        console.log('Observable complete!');
+      }
+    );
   }
 
   constructor(private appareilService: AppareilService) {
