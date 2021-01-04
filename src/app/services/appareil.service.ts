@@ -8,21 +8,21 @@ export class AppareilService {
   appareilsSubject = new Subject<any[]>();
 
   private appareils = [
-      {
-        id: 1,
-        name: 'Machine a laver',
-        status: 'on'
-      },
-      {
-        id: 2,
-        name: 'Frigo',
-        status: 'on'
-      },
-      {
-        id: 3,
-        name: 'Ordinateur',
-        status: 'off'
-      }
+      // {
+      //   id: 1,
+      //   name: 'Machine a laver',
+      //   status: 'on'
+      // },
+      // {
+      //   id: 2,
+      //   name: 'Frigo',
+      //   status: 'on'
+      // },
+      // {
+      //   id: 3,
+      //   name: 'Ordinateur',
+      //   status: 'off'
+      // }
     ];
 
     constructor(private httpClient: HttpClient) {}
@@ -38,6 +38,19 @@ export class AppareilService {
                       }
                     );
                   }
+
+    getAppareilFromServer() {
+      this.httpClient.get<any[]>('https://o-angular-default-rtdb.europe-west1.firebasedatabase.app/appareils.json')
+        .subscribe(
+          (response) => {
+            this.appareils = response;
+            this.emitAppareilSubject();
+          },
+          (error) => {
+            console.log('Erreur ! :' + error);
+          }
+        );
+    }
 
     addAppareil(name: string, status: string) {
       const appareilObject = {
