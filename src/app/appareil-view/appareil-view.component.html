@@ -2,7 +2,6 @@
   <div class="row">
     <div class="col-xs-12">
       <h2>Mes appareils</h2>
-      <p>Mis a jour : {{ lastUpdate | async | date: 'y MMMM EEEE d' }}</p>
       <p>Mis a jour : {{ lastUpdate | async | date: 'y MMMM EEEE d' | uppercase }}</p>
       <p>Mis a jour : {{ lastUpdate | async |  date: 'short' }}</p>
       <ul class="list-group">
